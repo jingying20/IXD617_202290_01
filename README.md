@@ -7,5 +7,4 @@ IXD 617 Advanced Tech: Mobile Web
 - https://jingyingliangdesign.com/aau/IXD617
 - https://github.com/jingying20/IXD617_202290_01
 
-### Assignment Links
-- https://jingyingliangdesign.com/aau/IXD617/profile/
+
