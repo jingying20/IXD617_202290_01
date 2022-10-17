@@ -5,7 +5,141 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bench Tracker</title>
+
+    <!-- <link rel="stylesheet" href="lib/css.jquery.mobile.structure-1.4.5.min.css"> -->
+    <link rel="stylesheet" href="src/css/app.css">
+
+    <script src="lib/js/jquery-2.2.4.min.js"></script>
+    <script src="src/js/app.js"></script>
+    <script src="src/js/signin.js"></script>
+    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
+
+    <section data-role="page" id="signin-page">
+      <div data-role="main" class="display-flex flex-column">
+        <div class="flex-stretch signin-hero" ></div>
+        <img src="images/icons/one.png" alt="hero-icon">
+        <form class="form" id="signin-form" data-ajax="false">
+          <div class="warning"></div>
+          <div class="form-control">
+            <label class="form-label" for="signin-username">Username</label>
+            <input class="form-input" type="text" id="signin-username" data-role="none" placeholder="Type your Username">
+          </div>
+            <div class="form-control">
+              <label class="form-label" for="signin-password">Password</label>
+              <input class="form-input" type="text" id="signin-password" data-role="none" placeholder="Type your Password">
+            </div>
+            <div class="form-control">
+              <input type="submit" class="form-button" value="Click me" data-role="none">
+            </div>
+            <div class="form-control" style="text-align: center; font-size: 0.7em;">
+              Don't have an account? <a href="#signup-page">Sign Up!</a>
+            </div>
+        </form>
+       <!-- <div class="flex-stretch"></div> -->
+      </div>
+    </section>
+
+    <section data-role="page" id="signup-page">
+      <div data-role="main" class="display-flex flex-column flex-justify-center">
+        <div class="flex-stretch" style="flex-grow:4"></div>
+            <form class="form" id="signin-form" data-ajax="false">
+              <div class="form-control">
+                <label class="form-label" for="signup-username">Username</label>
+                <input class="form-input" type="text" id="signup-username" data-role="none" placeholder="Type your Username">
+              </div>
+                <div class="form-control">
+                  <label class="form-label" for="signup-password">Type a Password</label>
+                  <input class="form-input" type="text" id="signup-password" data-role="none" placeholder="Type your Password">
+                </div>
+                <div class="form-control">
+                  <label class="form-label" for="signup-confirm">Confirm Password</label>
+                  <input class="form-input" type="text" id="signup-confirm" data-role="none" placeholder="Type your Password">
+                </div>
+                <div class="form-control">
+                  <input type="submit" class="form-button" value="Click me" data-role="none">
+                </div>
+                <div class="form-control" style="text-align: center; font-size: 0.7em;">
+                  Already have an account? <a href="#signin-page">Sign In!</a>
+                </div>
+            </form>
+            <div class="flex-stretch"></div>
+      </div>
+    </section>
+
+    <!--Recent Page-->
+    <section data-role="page" id="recent-page">
+        <div data-role="main">
+            MAP!
+        </div>
+        <footer data-role="footer">
+            <ul>
+              
+                   <li><a href="#recent-page">Recent</a></li>
+                   <li><a href="#list-page">List</a></li>
+                   <li><a href="#user-profile-page">Profile</a></li>
+
+            </ul>
+        </footer>
+      </section>
+
+
+    <!--List Page-->
+    <section data-role="page" id="list-page">
+        <header data-role="header">
+           Beches List
+        </header>
+        <div data-role="main">
+            <!-- div.benchlist-item*10>a[href="#bench-profile-page"]>{Bench $} -->
+           <div class="benchlist-item"><a href="#bench-profile-page">Bench 1</a></div>
+           <div class="benchlist-item"><a href="#bench-profile-page">Bench 2</a></div>
+           <div class="benchlist-item"><a href="#bench-profile-page">Bench 3</a></div>
+           <div class="benchlist-item"><a href="#bench-profile-page">Bench 4</a></div>
+           <div class="benchlist-item"><a href="#bench-profile-page">Bench 5</a></div>
+           <div class="benchlist-item"><a href="#bench-profile-page">Bench 6</a></div>
+           <div class="benchlist-item"><a href="#bench-profile-page">Bench 7</a></div>
+           <div class="benchlist-item"><a href="#bench-profile-page">Bench 8</a></div>
+           <div class="benchlist-item"><a href="#bench-profile-page">Bench 9</a></div>
+           <div class="benchlist-item"><a href="#bench-profile-page">Bench 10</a></div>
+        </div>
+        <footer data-role="footer">
+            <ul>
+                    <li> <a href="#recent-page">Recent</a></li>
+                    <li><a href="#list-page">List</a></li>
+                    <li> <a href="#user-profile-page">Profile</a></li>
+            </ul>
+        </footer>
+      </section>
+
+
+    <!--User Profile Page-->
+    <section data-role="page" id="use-profile-page">
+        <div data-role="main">
+            User Profile
+        </div>
+        <footer data-role="footer">
+            <ul>
+                    <li><a href="#recent-page">Recent</a></li>
+                    <li><a href="#list-page">list</a></li>
+                    <li><a href="#user-profile-page">Profile</a></li>
+            </ul>
+        </footer>
+      </section>
+
+      <!--Bench Profile Page-->
+      <section data-role="page" id="bench-profile-page">
+        <header data-role="header">
+            <h1>Bench Profile</h1>
+            <ul>
+                <li><a href="#" data-rel="back">Back</a></li>
+                <li class="flex-stretch"></li>
+                <li><a href="#bench-edit-page" data-rel="edit">Edit</a></li>
+            </ul>
+          </header>
+        <div data-role="main">
+            Bench Profile
+        </div>
+      </section>
 </body>
 </html>
