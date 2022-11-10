@@ -21,13 +21,101 @@
    --color-neutal-dark: rgb(37, 44, 41);
 }
 
+#signin-page{
+    background-color: #f4efe7;
+
+}
+.logo{
+    float: left;
+    z-index: 100;
+    width: 10%;
+    opacity:0.7;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.small-pic{
+    z-index: 100;
+    margin: -50px 240px -90px;
+    opacity: 0.7;
+    
+}
+
+.name{
+    float: left;
+    color: #f8f0e0;
+    margin: -10px 10px 1px;
+}
+
+.word{
+    float: left;
+    color: #f8f0e0;
+    margin: auto;
+    margin-top: -20px;
+}
+
+.name2{
+    float: left;
+    color: #98b0b0;
+    margin: -10px 10px 1px;
+}
+
+
+.word2{
+    display: block;
+    float: left;
+    color:  #f0b050;
+    margin: auto;
+}
+
+.bottom-pic{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+.bottom-pic>img {
+    object-position: center 0;
+    object-fit: none;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+}
+
+.bottom-pic2{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+}
+
+.bottom-pic2>img {
+    object-position: center 0;
+    object-fit: none;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+}
+
+
+#signup-page{
+    background-color: #f4efe7;
+}
+
+
 body{
     margin:0;
     font-family: var(--font-body);
 }
 
 a{
-    color:var(--color-main-medium);
+    color: #4095aa;
     font-weight:bold;
     text-decoration: none;
 }
@@ -130,7 +218,7 @@ a{
 
 /* FORMS */
 .form-control{
-    margin: 1em 0;
+    margin: 1em 0 ;
 }
 .form-label{
     font-size: 0.8;
@@ -141,7 +229,7 @@ a{
 .form-input {
     background-color: transparent;
     border-width: 1px;
-    border-color: var(--color-neutal-light);
+    border-color: #98b0b0;
     border-style: solid;
     border-radius: 0.2em;
     padding: 0.5em 1em;
@@ -150,7 +238,7 @@ a{
     font: inherit;
 }
 .form-button {
-    background-color: var(--color-neutal-lighter);
+    background-color: #eb7368;
     border-width: 0;
     border-radius: 0.2em;
     padding: 0.5em 1em;
@@ -158,11 +246,13 @@ a{
     width: 100%;
     font: inherit;
     text-align: center;
-    color: inherit;
+    color: white;
 }
 .form-button:hover{
     text-decoration: none;
+    color: #f8f0e0;
 }
+
 
 
 
@@ -172,17 +262,41 @@ a{
 }
 
 .signin-hero{
+    position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
+
 }
+
+.signin-hero>img {
+    position: absolute;
+    top: -50px;
+    bottom: -30px;
+    transform: translateY(28px);
+   
+}
+.signin-hero2>img {
+    position: absolute;
+    top: -10px;
+    bottom: -30px;
+    transform: translateY(28px);
+   
+}
+
 .hero-icon {
-     width: 80vw;
+     width: 50vw;
      aspect-ratio: 1/1;
-
 }
 
+.signin-hero{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+.flex-stretch1{
+    margin-bottom: 70px;
+}
 
 /*map*/
 

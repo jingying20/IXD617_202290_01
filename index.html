@@ -15,40 +15,52 @@
     <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
   </head>
   <body>
-
+    
     <section data-role="page" id="signin-page">
+      <div class="logo"><img src="images/icons/logo3.png" alt=""></div>
+      <div class="small-pic"><img src="images/icons/three.png" alt=""></div>
+      <div class="bottom-pic"><img src="images/icons/background.png" alt=""></div>
       <div data-role="main" class="display-flex flex-column">
+        <div class="name"><h1>Bench Finder</h1></div>
+        <div class="word"><h3>Welcome! Let's look for a relaxing bench!</h3></div> 
         <div class="flex-stretch signin-hero" >
         <img src="images/icons/one.png" alt="hero-icon">
         </div>
+        <div class="flex-stretch" style="flex-grow:4"></div>
         <form class="form" id="signin-form" data-ajax="false">
           <div class="warning"></div>
           <div class="form-control">
             <label class="form-label" for="signin-username">Username</label>
             <input class="form-input" type="text" id="signin-username" data-role="none" placeholder="Type your Username">
-          </div>
-            <div class="form-control">
+              <div class="form-control">
               <label class="form-label" for="signin-password">Password</label>
               <input class="form-input" type="text" id="signin-password" data-role="none" placeholder="Type your Password">
-            </div>
-            <div class="form-control">
+              </div>
+             <div class="form-control">
 
-              <input type="submit" class="form-button" value="Click me" data-role="none">
-            </div>
-            <div class="form-control" style="text-align: center; font-size: 0.7em;">
+              <input type="submit" class="form-button" value="Sign In" data-role="none">
+             </div>
+             <div class="form-control" style="text-align: center; font-size: 0.7em; color: darkslategrey;">
               Don't have an account? <a href="#signup-page">Sign Up!</a>
-            </div>
+             </div>
         </form>
-      <!-- <div class="flex-stretch"></div> -->
+        <div class="flex-stretch1"></div>
       </div>
+      <div class="word2"><footer>Let's start our journey! </footer></div>
     </section>
 
     <section data-role="page" id="signup-page">
       <div data-role="main" class="display-flex flex-column flex-justify-center">
-        <!--  <div class="flex-stretch" style="flex-grow:4"></div> -->
-          <div class="flex-stretch signin-hero" >
+       
+        <div class="logo"><img src="images/icons/logo3.png" alt=""></div>
+      <div class="small-pic"><img src="images/icons/three.png" alt=""></div>
+      <div class="bottom-pic2"><img src="images/icons/background.png" alt=""></div>
+      <div data-role="main" class="display-flex flex-column">
+        <div class="name2"><h1>Bench Finder</h1></div>
+        <div class="flex-stretch signin-hero2" >
           <img src="images/icons/one.png" alt="hero-icon">
           </div>
+        <div class="flex-stretch" style="flex-grow:5"></div> 
             <form class="form" id="signup-form" data-ajax="false">
               <div class="form-control">
                 <label class="form-label" for="signup-username">Username</label>
@@ -63,14 +75,15 @@
                   <input class="form-input" type="text" id="signup-confirm" data-role="none" placeholder="Type your Password">
                 </div>
                 <div class="form-control">
-                  <input type="submit" class="form-button" value="Click me" data-role="none">
+                  <input type="submit" class="form-button" value="Sign Up" data-role="none">
                 </div>
-                <div class="form-control" style="text-align: center; font-size: 0.7em;">
+                <div class="form-control" style="text-align: center; font-size: 0.7em; color: darkslategrey;">
                   Already have an account? <a href="#signin-page">Sign In!</a>
                 </div>
             </form>
-            <!--<div class="flex-stretch"></div> -->
+            <div class="flex-stretch"></div>
       </div>
+      <div class="word2"><footer>Let's start our journey! </footer></div>
     </section>
 
     <!--Recent Page-->
@@ -105,7 +118,7 @@
     <!--List Page-->
     <section data-role="page" id="list-page">
         <header data-role="header">
-          <h1>Beches List</h1> 
+          <h1>Benches List</h1> 
         </header>
         <div data-role="main">
           <div class="benchlist">
@@ -144,7 +157,7 @@
 
 
     <!--User Profile Page-->
-    <section data-role="page" id="use-profile-page">
+    <section data-role="page" id="user-profile-page">
         <div data-role="main">
           <h1>User Profile</h1>
             <div>
