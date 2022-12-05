@@ -1,7 +1,7 @@
 import { checkData } from "./functions.js";
 
 
-export const makeMap = async(target, center={lat:37.786038, lng:-122.399342}) => {
+export const makeMap = async(target, center={lat:37.786038, lng:-122.399342 }) => {
     await checkData(()=>window.google);
 
     let map_el = $(target);
@@ -31,6 +31,7 @@ export const makeMarkers = (map_el,marker_locs=[]) => {
         let marker = new google.maps.Marker({
             position: location,
             map,
+           //改icon//
             icon: {
                 url:location.icon,
                 scaledSize: {

@@ -7,7 +7,7 @@ export const makeBenchList = templater(({id,name,type,style,img})=>`
     <div class="benchlist-body">
         <div class="benchlist-name">${name}</div>
         <div class="benchlist-type">${type}</div>
-        <div class="benchlist-style">${breed}</div>
+        <div class="benchlist-style">${style}</div>
     </div>
 </a>
 `)
@@ -112,4 +112,20 @@ export const makeEditBenchForm = ({bench,namespace}) => {
         value: bench.description
     })}
     `;
+}
+
+const filterList = (benches,type) => {
+    let arr = [...(new Set(benches.map(o=>o[type])))];
+    return templater(o=>o?`<span data-filter="${type}" data-value="${o}">${o}</span>`:'')(arr);
+}
+
+
+export const makeFilterList = (benches) => {
+    return `
+        <span data-filter="type" data-value="">All</span>
+        |
+        ${filterList(benches,'type')}
+        |
+        ${filterList(benches,'style')}
+    `
 }

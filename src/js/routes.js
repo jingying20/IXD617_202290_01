@@ -1,3 +1,4 @@
+
 import { query } from "./functions.js"
 import { makeMap, makeMarkers } from "./maps.js";
 import { makeBenchList, makeBenchMapDescription, makeBenchProfileDescription, makeEditBenchForm, makeEditUserForm, makeUserProfilePage } from "./parts.js";
@@ -53,6 +54,7 @@ export const ListPage = async() => {
     console.log(benches)
 
     $("#list-page .benchlist").html(makeBenchList(benches))
+    $(".filter-bar").html(makeFilterList(benches))
 }
 
 export const UserProfilePage = async() => {
@@ -65,6 +67,7 @@ export const UserProfilePage = async() => {
     console.log(user)
 
     $("#user-profile-page .body").html(makeUserProfilePage(user))
+   
 }
 
 export const BenchProfilePage = async() => {
@@ -91,6 +94,12 @@ export const BenchProfilePage = async() => {
 export const ChooseLocationPage = async() => {
     let map_el = await makeMap("#choose-location-page .map");
     makeMarkers(map_el,[]);
+    map_el.data("map").addListener("click",function(e){
+        console.log(e)
+        $("#location-lat").val(e.latLng.lat());
+        $("#location-lng").val(e.latLng.lng());
+        makeMarkers(map_el,[e.latLng]);
+    })
 }
 
 
@@ -104,7 +113,30 @@ export const UserEditPage = async() => {
 
     $("#user-edit-page .body").html(makeEditUserForm(user));
 }
+export const UserEditPhotoPage = async() => {
+    let {result:users} = await query({
+        type:"user_by_id",
+        params:[sessionStorage.userId]
+    });
+    let [user] = users;
 
+    $("#user-edit-photo-page .body").css({
+        "background-image": `url('${user.img}')`
+    });
+}
+
+
+export const BenchAddPage = async() => {
+    $("#bench-add-page .body").html(makeEditBenchForm({
+        bench:{
+            name:'',
+            type:'',
+            style:'',
+            description:'',
+        },
+        namespace:'bench-add'
+    }));
+}
 
 export const BenchEditPage = async() => {
     let {result:benches} = await query({

@@ -12,11 +12,12 @@
     <script src="lib/js/jquery-2.2.4.min.js"></script>
     <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
     <script src="src/js/app.js" type="module"></script>
-    
-    <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxFlGCvrBiz53-c8WDpV4bryeCiEkdNdc"
-    defer
-  ></script>
+
+  <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlIkoajOE5wv1c3J1M8Cxu1uGbdDPQShk"
+  defer
+></script>
+
   </head>
   <body>
     
@@ -94,25 +95,35 @@
     <section data-role="page" id="recent-page">
         <div data-role="main">
            <div class="map"></div>
-           
-           <div class="floater top left">
-            <a href="#" class="btn-circle" data-activate="#recent-add-modal">☰</a>
-           </div>
-       
-           <div id="recent-add-modal" class="modal">
-            <div class="modal-back transparent" data-deactivate="#recent-add-modal"></div>
-            <div class="modal-drawer left">
-                <div class="modal-head">Head</div>
-                <div class="modal-body">Body</div>
-            </div>
-          </div>
+
+           <div class="floater bottom right">
+            <a href="#choose-bench-page" class="btn-circle">&plus;</a>
         </div>
+  
+        <div id="map-recent-modal" class="modal">
+            <div class="modal-back transparent" data-deactivate="#map-recent-modal"></div>
+            <div class="modal-drawer island top">
+                <div class="modal-body"></div>
+            </div>
+        </div>
+    </div>
+           
+  
         <footer data-role="footer">
             <ul>
               
-                   <li><a href="#recent-page">Recent</a></li>
-                   <li><a href="#list-page">List</a></li>
-                   <li><a href="#user-profile-page">Profile</a></li>
+                   <li><a href="#recent-page">      
+                    <span class="footer-icon"><img class="icon" src="images/icons/map.svg"></span>
+                    <span class="footer-label">Recent</span>
+                  </a></li>
+                   <li><a href="#list-page">
+                    <span class="footer-icon"><img class="icon" src="images/icons/list.svg"></span>
+                    <span class="footer-label">List</span>
+                   </a></li>
+                   <li><a href="#user-profile-page">
+                    <span class="footer-icon"><img class="icon" src="images/icons/profile.svg"></span>
+                    <span class="footer-label">Profile</span>
+                   </a></li>
 
             </ul>
         </footer>
@@ -122,91 +133,60 @@
     <!--List Page-->
     <section data-role="page" id="list-page">
         <header data-role="header">
-          <h1>Benches List</h1> 
-        </header>
-        <div data-role="main">
-          <div class="benchlist">
-            <!-- div.benchlist-item*10>a[href="#bench-profile-page"]>{Bench $} -->
-           <div class="benchlist-item"><a href="#bench-profile-page">Bench 1</a></div>
-           <div class="benchlist-item"><a href="#bench-profile-page">Bench 2</a></div>
-           <div class="benchlist-item"><a href="#bench-profile-page">Bench 3</a></div>
-           <div class="benchlist-item"><a href="#bench-profile-page">Bench 4</a></div>
-           <div class="benchlist-item"><a href="#bench-profile-page">Bench 5</a></div>
-           <div class="benchlist-item"><a href="#bench-profile-page">Bench 6</a></div>
-           <div class="benchlist-item"><a href="#bench-profile-page">Bench 7</a></div>
-           <div class="benchlist-item"><a href="#bench-profile-page">Bench 8</a></div>
-           <div class="benchlist-item"><a href="#bench-profile-page">Bench 9</a></div>
-           <div class="benchlist-item"><a href="#bench-profile-page">Bench 10</a></div>
-          </div>
-           <div class="floater bottom right">
-             <a href="#" class="btn-circle" data-activate="#list-add-modal">&plus;</a>
-           </div>
+          <form id="list-search-form" class="hotdog" data-ajax="false">
+            <input id="list-search-input" type="search" data-role="none" placeholder="Search">
+        </form>
+    </header>
+    <header data-role="header" class="filter-bar">
+    </header>
+    <div data-role="main">
+        <div class="benchlist"></div>
+        <div class="floater bottom right">
+            <a href="#bench-add-page" class="btn-circle">&plus;</a>
         </div>
-        <footer data-role="footer">
-            <ul>
-                    <li> <a href="#recent-page">Recent</a></li>
-                    <li><a href="#list-page">List</a></li>
-                    <li> <a href="#user-profile-page">Profile</a></li>
-            </ul>
-        </footer>
-        <div id="list-add-modal" class="modal">
-          <div class="modal-back" data-deactivate="#list-add-modal"></div>
-          <div class="modal-popup">
-              <div class="modal-head">Head</div>
-              <div class="modal-body">Body</div>
-              <div class="modal-foot">Foot</div>
-          </div>
+    </div>
+    <footer data-role="footer">
+        <ul>
+            <li><a href="#recent-page">
+                <span class="footer-icon"><img class="icon" src="images/icons/map.svg"></span>
+                <span class="footer-label">Recent</span>
+            </a></li>
+            <li><a href="#list-page">
+                <span class="footer-icon"><img class="icon" src="images/icons/list.svg"></span>
+                <span class="footer-label">List</span></a></li>
+            <li><a href="#user-profile-page">
+                <span class="footer-icon"><img class="icon" src="images/icons/profile.svg"></span>
+                <span class="footer-label">Profile</span></a></li>
+        </ul>
+    </footer>
+
+    <div id="list-add-modal" class="modal">
+        <div class="modal-back" data-deactivate="#list-add-modal"></div>
+        <div class="modal-popup">
+            <div class="modal-head">Head</div>
+            <div class="modal-body">Body</div>
+            <div class="modal-foot">Foot</div>
         </div>
-      </section>
+    </div>
+</section>
 
 
-    <!--User Profile Page-->
-    <section data-role="page" id="user-profile-page">
-        <div data-role="main">
-          <h1>User Profile</h1>
-            <div>
-              <a href="#" class="js-logout">Log out</a>
-            </div>
-        </div>
-        <footer data-role="footer">
-            <ul>
-                    <li><a href="#recent-page">Recent</a></li>
-                    <li><a href="#list-page">list</a></li>
-                    <li><a href="#user-profile-page">Profile</a></li>
-            </ul>
-        </footer>
-      </section>
-
-      <!--Bench Profile Page-->
-      <section data-role="page" id="bench-profile-page">
-        <header data-role="header">
-            <h1>Bench Profile</h1>
-            <ul>
-                <li><a href="#" data-rel="back">Back</a></li>
-                <li class="flex-stretch"></li>
-                <li><a href="#bench-edit-page">Edit</a></li>
-            </ul>
-          </header>
-        <div data-role="main">
-            Bench Profile
-        </div>
-      </section>
-
-       <!-- CHOOSE BENCH PAGE -->
-    <section data-role="page" id="choose-bench-page">
-      <header data-role="header">
-          <h1>Choose Bench</h1>
-          <ul>
-              <li><a href="#" data-rel="back">Back</a></li>
-              <li class="flex-stretch"></li>
-              <li><a href="#choose-location-page">Next</a></li>
-          </ul>
-      </header>
-      <div data-role="main">
-          form for choose bench
-      </div>
-  </section>
-
+<!-- CHOOSE BENCH PAGE -->
+<section data-role="page" id="choose-bench-page">
+  <header data-role="header">
+      <h1>Choose Bench</h1>
+      <ul>
+          <li><a href="#" data-rel="back">Back</a></li>
+          <li class="flex-stretch"></li>
+          <li><a href="#choose-location-page">Next</a></li>
+      </ul>
+  </header>
+  <div data-role="main">
+      <input type="hidden" id="location-bench-id">
+      <input type="hidden" id="location-back" value="-2">
+      form for choose bench
+  </div>
+</section>
 
 <!-- CHOOSE LOCATION PAGE -->
 <section data-role="page" id="choose-location-page">
@@ -219,25 +199,28 @@
       </ul>
   </header>
   <div data-role="main">
+      <input type="hidden" id="location-lat">
+      <input type="hidden" id="location-lng">
       <div class="map"></div>
   </div>
 </section>
 
-<!-- CHOOSE LOCATION PAGE -->
-<section data-role="page" id="choose-description-page">
+ <!-- CHOOSE LOCATION PAGE -->
+ <section data-role="page" id="choose-description-page">
   <header data-role="header">
-      <h1>Description of Animal</h1>
+      <h1>Description of Bench</h1>
       <ul>
           <li><a href="#" data-rel="back">Back</a></li>
           <li class="flex-stretch"></li>
-          <li><a href="#list-page">Save</a></li>
+          <li><a href="#" class="js-submit-location-add-form">Save</a></li>
       </ul>
   </header>
   <div data-role="main">
-      for for description
+      <div class="padded">
+          <textarea class="form-input" rows="10" id="location-description"></textarea>
+      </div>
   </div>
 </section>
-
 
  <!-- USER PROFILE PAGE -->
  <section data-role="page" id="user-profile-page">
@@ -266,20 +249,151 @@
   </footer>
 </section>
 
-<!-- USER SETTINGS PAGE -->
-<section data-role="page" id="user-settings-page">
+  <!-- USER SETTINGS PAGE -->
+  <section data-role="page" id="user-settings-page">
+    <header data-role="header">
+        <h1>Settings</h1>
+        <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+        </ul>
+    </header>
+    <div data-role="main">
+        <div class="settings">
+            <li><a href="#user-edit-page">Edit User</a></li>
+            <li><a href="#password-edit-page">Edit Password</a></li>
+            <li><a href="#" class="js-logout">Log out</a></li>
+        </ul>
+    </div>
+</section>
+
+<!-- USER EDIT PAGE -->
+<section data-role="page" id="user-edit-page">
+    <header data-role="header">
+        <h1>Edit User</h1>
+        <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-submit-user-edit-form">Submit</a></li>
+        </ul>
+    </header>
+    <form data-role="main" data-ajax="false" id="user-edit-form" class="padded display-flex flex-column full overscroll">
+        <div class="body"></div>
+        <div class="flex-stretch"></div>
+        
+        <div class="form-control">
+            <input class="form-button" type="submit" data-role="none" value="Submit">
+        </div>
+    </form>
+</section>
+
+<!-- PASSWORD EDIT PAGE -->
+<section data-role="page" id="password-edit-page">
+    <header data-role="header">
+        <h1>Edit Password</h1>
+        <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-submit-password-edit-form">Submit</a></li>
+        </ul>
+    </header>
+    <form data-role="main" data-ajax="false" id="password-edit-form" class="padded display-flex flex-column full overscroll">
+        <div class="body">
+            <div class="form-control">
+                <label class="form-label" for="password-edit-password">New Password</label>
+                <input class="form-input" type="password" id="password-edit-password" data-role="none" placeholder="Type a new password">
+            </div>
+            <div class="form-control">
+                <label class="form-label" for="password-edit-confirm">Confirm New Password</label>
+                <input class="form-input" type="password" id="password-edit-confirm" data-role="none" placeholder="Type the same password">
+            </div>
+        </div>
+    </form>
+</section>
+
+<!-- USER EDIT PHOTO PAGE -->
+<section data-role="page" id="user-edit-photo-page">
+    <header data-role="header">
+        <h1>Edit User Photo</h1>
+        <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-submit-user-edit-photo-form">Submit</a></li>
+        </ul>
+    </header>
+    <form data-role="main" data-ajax="false" id="user-edit-photo-form" class="padded display-flex flex-column full overscroll">
+        <input type="hidden" id="user-edit-photo-image">
+        <label class="body imagepicker replace">
+            <input type="file" id="user-edit-photo-input" data-role="none" class="hidden">
+        </label>
+    </form>
+</section>  
+
+ <!-- Bench PROFILE PAGE -->
+ <section data-role="page" id="bench-profile-page">
   <header data-role="header">
-      <h1>Settings</h1>
+      <h1></h1>
       <ul>
           <li><a href="#" data-rel="back">Back</a></li>
+          <li class="flex-stretch"></li>
+          <li><a href="#bench-edit-page">Edit</a></li>
       </ul>
   </header>
   <div data-role="main">
-      <div class="settings">
-          <li><a href="#user-edit-page">Edit User</a></li>
-          <li><a href="#" class="js-logout">Log out</a></li>
-      </ul>
+      <div class="bench-profile-top">
+          <div class="floater bottom right">
+              <a href="#" class="js-bench-delete"><img class="icon" src="images/icons/trash.svg" style="font-size:1.5em" /></a>
+          </div>
+      </div>
+      <div class="bench-profile-nav">
+          <div class="nav-link active">Map</div>
+          <div class="nav-link">Description</div>
+      </div>
+      <div class="bench-profile-bottom">
+          <div class="bench-profile-section section-map active">
+              <div class="map"></div>
+              
+              <div class="floater bottom right">
+                  <a href="#choose-location-page" class="btn-circle js-choose-bench-for-location">&plus;</a>
+              </div>
+          </div>
+          <div class="bench-profile-section section-description"></div>
+      </div>
   </div>
+</section>
+
+ <!-- BENCH EDIT PAGE -->
+ <section data-role="page" id="bench-edit-page">
+  <header data-role="header">
+      <h1>Edit Bench</h1>
+      <ul>
+          <li><a href="#" data-rel="back">Back</a></li>
+          <li class="flex-stretch"></li>
+          <li><a href="#" class="js-submit-bench-edit-form">Submit</a></li>
+      </ul>
+  </header>
+  <form data-role="main" data-ajax="false" id="bench-edit-form" class="padded display-flex flex-column full overscroll">
+      <div class="body"></div>
+      <div class="flex-stretch"></div>
+      
+      <div class="form-control">
+          <input class="form-button" type="submit" data-role="none" value="Submit">
+      </div>
+  </form>
+</section>
+
+<!-- BENCH ADD PAGE -->
+<section data-role="page" id="bench-add-page">
+  <header data-role="header">
+      <h1>Add an Bench</h1>
+      <ul>
+          <li><a href="#" data-rel="back">Back</a></li>
+          <li class="flex-stretch"></li>
+          <li><a href="#" class="js-submit-bench-add-form">Submit</a></li>
+      </ul>
+  </header>
+  <form data-role="main" data-ajax="false" id="bench-add-form" class="padded display-flex flex-column full overscroll">
+      <div class="body"></div>
+  </form>
 </section>
 
   </body>

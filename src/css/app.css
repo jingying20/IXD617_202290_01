@@ -155,9 +155,13 @@ a{
     overflow:hidden;
     background-color: white;
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
-   
     z-index:2;
 }
+[data-role="header"]:not(:last-of-type),
+[data-role="footer"]:not(:first-of-type) {
+    z-index:3;
+}
+
 
 /* Core Navigation */
 [data-role="header"] ul,
@@ -214,6 +218,12 @@ a{
 .flex-stretch { flex: 1 1 auto; }
 .flex-column { flex-direction: column; }
 .overscroll { overflow: auto; }
+.hidden { display: none; }
+
+.padded { padding:1em; }
+.full { height:100%; }
+
+
 
 
 /* FORMS */
@@ -270,9 +280,10 @@ a{
 
 .signin-hero>img {
     position: absolute;
-    top: -50px;
+    top: -45px;
     bottom: -30px;
     transform: translateY(28px);
+  
    
 }
 .signin-hero2>img {
@@ -284,7 +295,7 @@ a{
 }
 
 .hero-icon {
-     width: 50vw;
+     width: 40vw;
      aspect-ratio: 1/1;
 }
 
@@ -306,11 +317,7 @@ a{
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../../images/icons/map.png');
-    background-position: center;
-    background-size: cover;
 }
-
 
 
 
@@ -395,6 +402,15 @@ a{
     transition: all 0.3s;
     box-shadow: 0 0 5px rgba(0,0,0,0.3);
 }
+.modal-drawer.island {
+    box-shadow: initial;
+}
+.modal-drawer.island .modal-body {
+    margin:1em;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    border-radius:1em;
+
+}
 
 .modal-drawer.right,
 .modal-drawer.left {
@@ -441,6 +457,9 @@ a{
 
     padding: 1em;
 }
+
+
+
 
 
 /* M9 */
@@ -572,6 +591,16 @@ a{
     font-weight:1.5em;
 }
 
+.body {
+    height:100%;
+}
+
+#user-edit-photo-page .body {
+    background-size:contain;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+
 
 .icon {
     font-size: 1em;
@@ -593,4 +622,40 @@ a{
 }
 .settings li~li {
     border-top: 1px solid var(--color-neutral-lighter);
+}
+
+
+#list-page header {
+    display:flex;
+}
+.hotdog {
+    margin: 5px;
+    line-height:var(--header-height);
+    background-color: var(--color-neutral-lighter);
+    border-radius: var(--header-height);
+    width: 100%;
+    display: flex;
+}
+.hotdog input {
+    width:100%;
+    height:100%;
+    background-color: unset;
+    border: unset;
+    outline: unset;
+    padding: unset;
+    margin: unset;
+    vertical-align: middle;
+    font: inherit;
+    padding: 0 1em;
+}
+
+
+.filter-bar {
+    display:flex;
+    padding-inline: 1em;
+    gap: 1em;
+    overflow:auto;
+}
+.filter-bar span {
+    font-weight:bold;
 }
