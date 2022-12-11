@@ -101,7 +101,7 @@ export const ChooseLocationPage = async() => {
         makeMarkers(map_el, [{
             lat:e.latLng.lat(),
             lng:e.latLng.lng(),
-            icon:'images/icons/marker.svg'
+            icon:'images/icons/marker.png'
         }]);
     })
 }

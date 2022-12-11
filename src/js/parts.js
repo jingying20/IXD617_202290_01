@@ -16,7 +16,7 @@ export const makeUserProfilePage = ({name,email,username,img})=>`
 <div class="userProfile">
     <div class="user-profile-title">User Profile</div>
     <div class="user-profile-userInfo">
-        <img src="${img}" class="avatarImg" id="avatarImg" style="width: 30%">
+    <div class="user-profile-image"><a href="#user-edit-photo-page"><img src="${img}"></a></div>
         <div class="user-profile-userName" id="user-profile-userName">${username}</div>
         <div class="user-profile-userName">${email}</div>
     </div>
@@ -25,7 +25,7 @@ export const makeUserProfilePage = ({name,email,username,img})=>`
         <a href="#user-edit-page">
             <div class="user-profile-edit user-profile-btn">
                 <div class="user-profile-icon">
-                    <img src="icon.png">
+                    <img src="images/icons/icon1.png">
                 </div>
                 <div class="user-profile-btnText">
                     Edit Profile
@@ -37,7 +37,7 @@ export const makeUserProfilePage = ({name,email,username,img})=>`
         <a href="#user-settings-page">
             <div class="user-profile-settings user-profile-btn">
                 <div class="user-profile-icon">
-                    <img src="icon.png">
+                    <img src="images/icons/icon2.png">
                 </div>
                 <div class="user-profile-btnText">
                     Settings
