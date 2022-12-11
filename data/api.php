@@ -179,7 +179,7 @@ case "insert_bench":
         ?,
         ?,
         ?,
-        'https://via.placeholder.com/400/?text=BENCH',
+        ?,
         NOW()
     )
     ", $params, false);
@@ -250,7 +250,8 @@ case "update_bench":
         `name` = ?,
         `type` = ?,
         `style` = ?,
-        `description` = ?
+        `description` = ?,
+        `img` = ?
     WHERE `id` = ?
     ", $params, false);
 

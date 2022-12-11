@@ -2,13 +2,43 @@
 import { query } from "./functions.js";
 
 
-export const checkSigninForm = async() => {
+    
+  /*  export const checkSigninForm = () => {
+        const userval = $("#signin-username").val();
+        const passval = $("#signin-password").val();
+    
+        console.log(userval, passval)
+    
+        if (userval === "user0" && passval === "pass") {
+            // Logged In
+            console.log("Success");
+            sessionStorage.userId = 3;
+    
+            $("#signin-form")[0].reset();
+        } 
+        
+        
+        else {
+            // Not Logged In
+         
+            console.log("Failure");
+            sessionStorage.removeItem("userId");
+    
+            $(".warning").html("");
+            setTimeout(()=>{$(".warning").html("Login Failed.Please try again.");},1000)
+        }
+        */
+    
+    
+
+
+  export const checkSigninForm = async() => {
     const userval = $("#signin-username").val();
     const passval = $("#signin-password").val();
-
-    let founduser = await query({
+    
+       let founduser = await query({
         type: 'check_signin',
-        params: [userval,passval]
+       params: [userval,passval]
     });
 
     if (founduser.result.length > 0) {
@@ -17,14 +47,16 @@ export const checkSigninForm = async() => {
         sessionStorage.userId = founduser.result[0].id;
 
         $("#signin-form")[0].reset();
-    } else {
+        } 
+        
+        else {
         // Not Logged In
         console.log("Failure");
         sessionStorage.removeItem("userId");
 
         $(".warning").html("");
         setTimeout(()=>{$(".warning").html("");},3000)
-    }
+    }   
 
     checkUserId();
 }

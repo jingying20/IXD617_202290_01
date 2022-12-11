@@ -1,7 +1,7 @@
 import { checkData } from "./functions.js";
 
 
-export const makeMap = async(target, center={lat:37.786038, lng:-122.399342 }) => {
+export const makeMap = async(target, center={lat:37.7881909, lng:-122.4684995 }) => {
     await checkData(()=>window.google);
 
     let map_el = $(target);
@@ -33,10 +33,10 @@ export const makeMarkers = (map_el,marker_locs=[]) => {
             map,
            //改icon//
             icon: {
-                url:location.icon,
+                url:location.icon??'images/icons/marker.png',
                 scaledSize: {
-                    width:40,
-                    height:40,
+                    width:60,
+                    height:70,
                 }
             }
         });
@@ -107,40 +107,65 @@ const mapstyles = [
     },
     {
         "featureType": "administrative",
-        "elementType": "labels",
         "stylers": [
             {
-                "visibility": "off"
+                "visibility": "simplified"
+            },
+            {
+                "color": "#0f3671"
             }
         ]
     },
     {
-        "featureType": "landscape",
-        "elementType": "labels",
+        "featureType": "landscape.natural.landcover",
         "stylers": [
             {
-                "visibility": "off"
+                "color": "#F7E5AE"
+            },
+            {
+                "visibility": "on"
             }
         ]
     },
     {
         "featureType": "landscape.man_made",
-        "elementType": "all",
         "stylers": [
             {
-                "saturation": "-70"
+                "color": "#ECC0D1"
             },
             {
-                "lightness": "14"
+                "saturation": "100"
             }
         ]
     },
     {
         "featureType": "poi",
-        "elementType": "labels",
         "stylers": [
             {
                 "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.attraction",
+        "elementType":"all",
+        "stylers": [
+            {
+                "color": "#00003F"
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "stylers": [
+            {
+                "color": "#a0c179"
+            },
+            {
+                "visibility": "on"
             }
         ]
     },
@@ -167,14 +192,17 @@ const mapstyles = [
         "elementType": "all",
         "stylers": [
             {
-                "saturation": "100"
+                "color": "#95cbff"
             },
             {
-                "lightness": "-14"
+                "visibility": "on"
+            },
+            {
+                "saturation": "100"
             }
         ]
     },
-    {
+   /* {
         "featureType": "water",
         "elementType": "labels",
         "stylers": [
@@ -185,5 +213,5 @@ const mapstyles = [
                 "lightness": "12"
             }
         ]
-    }
+    } */
 ];

@@ -38,25 +38,25 @@
     z-index: 100;
     margin: -50px 240px -90px;
     opacity: 0.7;
-    
+
 }
 
 .name{
     float: left;
-    color: #f8f0e0;
+    color: #5e8a8a;
     margin: -10px 10px 1px;
 }
 
 .word{
     float: left;
-    color: #f8f0e0;
+    color: #5e8a8a;
     margin: auto;
     margin-top: -20px;
 }
 
 .name2{
     float: left;
-    color: #98b0b0;
+    color: #5e8a8a;
     margin: -10px 10px 1px;
 }
 
@@ -83,7 +83,7 @@
     object-fit: none;
     width: 100%;
     height: 100%;
-    opacity: 0.6;
+    opacity: 0.2;
 }
 
 .bottom-pic2{
@@ -143,7 +143,7 @@ a{
 [data-role="main"] {
     flex: 1 1 100%;
     position: relative;
-    overflow: relative;
+    overflow: auto;
     z-index:1;
 }
 
@@ -194,7 +194,7 @@ a{
 }
 
 [data-role="header"] a {
-    padding: 0 1em;   
+    padding: 0 1em;
 }
 
 
@@ -283,15 +283,15 @@ a{
     top: -45px;
     bottom: -30px;
     transform: translateY(28px);
-  
-   
+
+
 }
 .signin-hero2>img {
     position: absolute;
     top: -10px;
     bottom: -30px;
     transform: translateY(28px);
-   
+
 }
 
 .hero-icon {
@@ -318,9 +318,6 @@ a{
     width: 100%;
     height: 100%;
 }
-
-
-
 
 
 /* FLOATER */
@@ -536,6 +533,10 @@ a{
 .nav-link.active {
     background-color:var(--color-main-light);
 }
+.bench-profile-top {
+    position:relative;
+}
+
 .bench-profile-bottom {
     position:relative;
     flex: 1 1 100%;
@@ -577,6 +578,9 @@ a{
 
 
 
+
+
+
 .user-profile-image img {
     width:100%;
     object-fit: cover;
@@ -591,8 +595,80 @@ a{
     font-weight:1.5em;
 }
 
-.body {
+.userProfile{
+    background-color: #ebefff;
+    height: 100%;
+}
+.user-profile-title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+}
+.user-profile-userInfo{
+    margin-top: 5em;
+    text-align: center;
+}
+.user-profile-userName{
+    font-size: 1em;
+    margin-top: 10px;
+    color: #333333;
+}
+.user-profile-avatarImg{
+    width: 30%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.user-profile-btnList{
+    margin-top: 2em;
+    padding: 0 10px;
+}
+.user-profile-btn{
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    height: 8em;
+    padding: 20px 20px;
+    background-color: #ffffff;
+}
+.user-settings-btn{
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    height: 8em;
+    padding: 20px 20px;
+    background-color: #ffbfbf;
+}
+.user-profile-btn:not(:first-child){
+    margin-top: 10px;
+}
+.user-profile-btn:active{
+    background-color: #fff8eb;
+    text-decoration:none;
+}
+.user-profile-icon{
+    height: 80%;
+}
+.user-profile-icon > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.user-profile-btnText{
+    font-size: 2em;
+    margin-left: 1em;
+    text-decoration:none;
+}
+.user-profile-link{
+    margin-top: 10px;
+}
+
+.user-profile-body {
     height:100%;
+}
+
+.settings-btnText{
+    flex: 1;
+    text-align: center;
 }
 
 #user-edit-photo-page .body {
@@ -648,6 +724,48 @@ a{
     font: inherit;
     padding: 0 1em;
 }
+
+.thumbnail {
+    position:relative;
+    display:inline-block;
+    width:6em;
+    height:6em;
+    border-radius:0.6em;
+    border:0.25em solid white;
+    vertical-align:middle;
+    box-shadow:0 0.15em 0.35em 0.1em rgba(0,0,0,0.2);
+    margin:0.5em;
+
+    background-position:center;
+    background-size:cover;
+  }
+
+/* This will hide the file input */
+.imagepicker input {
+    display:none;
+  }
+  .imagepicker {
+    cursor:pointer;
+    color:white;
+    background-color:rgba(0,0,0,0.3);
+  }
+
+  /* This will add the floating plus symbol to the imagepicker */
+  .imagepicker:before {
+    content:'+';
+    position:absolute;
+    font-size:3em;
+    vertical-align:middle;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+  }
+  /* This will hide the plus symbol behind the background of the imagepicker if the class "picked" is added to the element */
+  .imagepicker.picked:before {
+    z-index:-1;
+  }
+
+
 
 
 .filter-bar {

@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bench Tracker</title>
-
+    
+    <meta name="mobile-web-app-capable" content="yes">
+     <link rel="shortcut icon" href="./icon_256x256.png" type="image/x-icon">
+     <link rel="icon" sizes="256x256" href="./icon_256x256.png">
     <!-- <link rel="stylesheet" href="lib/css.jquery.mobile.structure-1.4.5.min.css"> -->
     <link rel="stylesheet" href="src/css/app.css">
 
@@ -14,6 +17,7 @@
     <script src="src/js/app.js" type="module"></script>
 
   <script
+  
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlIkoajOE5wv1c3J1M8Cxu1uGbdDPQShk"
   defer
 ></script>
@@ -97,7 +101,7 @@
            <div class="map"></div>
 
            <div class="floater bottom right">
-            <a href="#choose-bench-page" class="btn-circle">&plus;</a>
+            <a href="#choose-location-page" class="btn-circle">&plus;</a>
         </div>
   
         <div id="map-recent-modal" class="modal">
@@ -113,15 +117,15 @@
             <ul>
               
                    <li><a href="#recent-page">      
-                    <span class="footer-icon"><img class="icon" src="images/icons/map.svg"></span>
+                    <span class="footer-icon"><img class="icon" src="images/icons/map1.png"></span>
                     <span class="footer-label">Recent</span>
                   </a></li>
                    <li><a href="#list-page">
-                    <span class="footer-icon"><img class="icon" src="images/icons/list.svg"></span>
+                    <span class="footer-icon"><img class="icon" src="images/icons/list2.png"></span>
                     <span class="footer-label">List</span>
                    </a></li>
                    <li><a href="#user-profile-page">
-                    <span class="footer-icon"><img class="icon" src="images/icons/profile.svg"></span>
+                    <span class="footer-icon"><img class="icon" src="images/icons/profile2.png"></span>
                     <span class="footer-label">Profile</span>
                    </a></li>
 
@@ -148,14 +152,14 @@
     <footer data-role="footer">
         <ul>
             <li><a href="#recent-page">
-                <span class="footer-icon"><img class="icon" src="images/icons/map.svg"></span>
+                <span class="footer-icon"><img class="icon" src="images/icons/map2.png"></span>
                 <span class="footer-label">Recent</span>
             </a></li>
             <li><a href="#list-page">
-                <span class="footer-icon"><img class="icon" src="images/icons/list.svg"></span>
+                <span class="footer-icon"><img class="icon" src="images/icons/list1.png"></span>
                 <span class="footer-label">List</span></a></li>
             <li><a href="#user-profile-page">
-                <span class="footer-icon"><img class="icon" src="images/icons/profile.svg"></span>
+                <span class="footer-icon"><img class="icon" src="images/icons/profile2.png"></span>
                 <span class="footer-label">Profile</span></a></li>
         </ul>
     </footer>
@@ -170,6 +174,46 @@
     </div>
 </section>
 
+
+
+<!-- CHOOSE LOCATION PAGE -->
+
+<section data-role="page" id="choose-location-page">
+  <header data-role="header">
+      <h1>Choose Location</h1>
+      <ul>
+          <li><a href="#" data-rel="back">Back</a></li>
+          <li class="flex-stretch"></li>
+          <li><a href="#choose-description-page">Next</a></li>
+      </ul>
+  </header>
+  <div data-role="main">
+      <input type="hidden" id="location-lat">
+      <input type="hidden" id="location-lng">
+      <div class="map"></div>
+  </div>
+</section>
+
+
+
+ <!-- CHOOSE LOCATION DESCRIPTION PAGE -->
+ <section data-role="page" id="choose-description-page">
+  <header data-role="header">
+      <h1>Description of Bench</h1>
+      <ul>
+          <li><a href="#" data-rel="back">Back</a></li>
+          <li class="flex-stretch"></li>
+          <li><a href="#choose-bench-page" class="js-submit-location-add-form">Save</a></li>
+      </ul>
+  </header>
+
+
+  <div data-role="main">
+      <div class="padded">
+          <textarea class="form-input" rows="10" id="location-description" style="height: 50px;"></textarea>
+      </div>
+  </div>
+</section>
 
 <!-- CHOOSE BENCH PAGE -->
 <section data-role="page" id="choose-bench-page">
@@ -188,62 +232,39 @@
   </div>
 </section>
 
-<!-- CHOOSE LOCATION PAGE -->
-<section data-role="page" id="choose-location-page">
-  <header data-role="header">
-      <h1>Choose Location</h1>
-      <ul>
-          <li><a href="#" data-rel="back">Back</a></li>
-          <li class="flex-stretch"></li>
-          <li><a href="#choose-description-page">Next</a></li>
-      </ul>
-  </header>
-  <div data-role="main">
-      <input type="hidden" id="location-lat">
-      <input type="hidden" id="location-lng">
-      <div class="map"></div>
-  </div>
-</section>
 
- <!-- CHOOSE LOCATION PAGE -->
- <section data-role="page" id="choose-description-page">
-  <header data-role="header">
-      <h1>Description of Bench</h1>
-      <ul>
-          <li><a href="#" data-rel="back">Back</a></li>
-          <li class="flex-stretch"></li>
-          <li><a href="#" class="js-submit-location-add-form">Save</a></li>
-      </ul>
-  </header>
-  <div data-role="main">
-      <div class="padded">
-          <textarea class="form-input" rows="10" id="location-description"></textarea>
-      </div>
-  </div>
-</section>
+
 
  <!-- USER PROFILE PAGE -->
- <section data-role="page" id="user-profile-page">
+ <section data-role="page" id="user-profile-page" data-url="user-profile-page" >
   <div data-role="main">
       <div class="body"></div>
+      <!-- <div>
+        <div class="user-profile-image">
+            <a href="#user-edit-photo-page">
+                <img src="" alt="">
+            </a>
+        </div>
+        <div class="user-profile-body"></div>
+      </div>
 
       <div class="floater top right">
-          <a href="#user-settings-page">
-              <img class="icon" style="font-size:1.3em" src="images/icons/menu.svg" />
+          <a href="#user-settings-page" class="ui-link">
+              <img class="icon" style="font-size:1.3em" src="images/icons/menu.png" />
           </a>
-      </div>
+      </div> -->
   </div>
-  <footer data-role="footer">
+  <footer data-role="footer" role="contentinfo" class="ui-footer ui-bar-inherit">
       <ul>
           <li><a href="#recent-page">
-              <span class="footer-icon"><img class="icon" src="images/icons/map.svg"></span>
+              <span class="footer-icon"><img class="icon" src="images/icons/map2.png"></span>
               <span class="footer-label">Recent</span>
           </a></li>
           <li><a href="#list-page">
-              <span class="footer-icon"><img class="icon" src="images/icons/list.svg"></span>
+              <span class="footer-icon"><img class="icon" src="images/icons/list2.png"></span>
               <span class="footer-label">List</span></a></li>
           <li><a href="#user-profile-page">
-              <span class="footer-icon"><img class="icon" src="images/icons/profile.svg"></span>
+              <span class="footer-icon"><img class="icon" src="images/icons/profile1.png"></span>
               <span class="footer-label">Profile</span></a></li>
       </ul>
   </footer>
@@ -258,11 +279,26 @@
         </ul>
     </header>
     <div data-role="main">
-        <div class="settings">
-            <li><a href="#user-edit-page">Edit User</a></li>
-            <li><a href="#password-edit-page">Edit Password</a></li>
-            <li><a href="#" class="js-logout">Log out</a></li>
-        </ul>
+        <div class="user-profile-btnList">
+            <div class="user-profile-link">
+                <a href="#password-edit-page" class="user-profile-link">
+                    <div class="user-profile-edit user-profile-btn">
+                        <div class="settings-btnText">
+                            Edit Password
+                        </div>
+                    </div>
+                </a >
+            </div>
+            <div class="user-profile-link">
+                <a href="#" class="user-profile-link">
+                    <div class="user-profile-settings user-profile-btn">
+                        <div class="settings-btnText">
+                            Log out
+                        </div>
+                    </div>
+                </a >
+            </div>
+        </div>
     </div>
 </section>
 
@@ -279,7 +315,8 @@
     <form data-role="main" data-ajax="false" id="user-edit-form" class="padded display-flex flex-column full overscroll">
         <div class="body"></div>
         <div class="flex-stretch"></div>
-        
+        <input type="file" id="imgUpload" accept=".jpg,.png" />
+        <img src="" id="avatarUpload">
         <div class="form-control">
             <input class="form-button" type="submit" data-role="none" value="Submit">
         </div>
@@ -341,7 +378,7 @@
   <div data-role="main">
       <div class="bench-profile-top">
           <div class="floater bottom right">
-              <a href="#" class="js-bench-delete"><img class="icon" src="images/icons/trash.svg" style="font-size:1.5em" /></a>
+              <a href="#" class="js-bench-delete"><img class="icon" src="images/icons/trash.png" style="font-size:1.5em" /></a>
           </div>
       </div>
       <div class="bench-profile-nav">
@@ -376,8 +413,26 @@
       <div class="flex-stretch"></div>
       
       <div class="form-control">
-          <input class="form-button" type="submit" data-role="none" value="Submit">
+        <input type="hidden" id="bench-edit-photo" value="">
+
       </div>
+        </header>
+        <div data-role="main" class="main">
+            <div>
+
+                <label class="form-label">How is the scenery nearby?</label>
+                <input class="form-input-edit" type="text" id="scenery" data-role="none" placeholder="scenery">
+                <label class="form-label">what material is it made of?</label>
+                <input class="form-input-edit" type="text" id="material" data-role="none" placeholder="stone, wood, steel or others?">
+                <label class="form-label">Description</label>
+                <input class="form-input-edit" type="text" id="description" data-role="none" placeholder="add a description for the bench">
+                <label class="form-label">Image</label>
+                <input class="form-label" type="file" id="bench-add-image" data-role="none" placeholder="add your image">
+
+            </div>
+        </div>
+    </section>
+
   </form>
 </section>
 
@@ -398,3 +453,4 @@
 
   </body>
   </html>
+

@@ -105,17 +105,19 @@ export const checkUserEditPhotoForm = () => {
 export const checkBenchAddForm = () => {
     let name = $("#bench-add-name").val();
     let type = $("#bench-add-type").val();
-    let breed = $("#bench-add-breed").val();
+    let style = $("#bench-add-style").val();
     let description = $("#bench-add-description").val();
-    
+    let image = $("#bench-add-photo-image").val();
+
     query({
         type: 'insert_bench',
         params: [
             sessionStorage.userId,
             name,
             type,
-            breed,
-            description
+            style,
+            description,
+            image
         ]
     }).then((data)=>{
         if (data.error) {
@@ -128,9 +130,10 @@ export const checkBenchAddForm = () => {
 export const checkBenchEditForm = () => {
     let name = $("#bench-edit-name").val();
     let type = $("#bench-edit-type").val();
-    let breed = $("#bench-edit-breed").val();
+    let style = $("#bench-edit-style").val();
     let description = $("#bench-edit-description").val();
-    
+    let image = $("#bench-edit-photo-image").val();
+
     query({
         type: 'update_bench',
         params: [
@@ -138,6 +141,7 @@ export const checkBenchEditForm = () => {
             type,
             style,
             description,
+            image,
             sessionStorage.benchId
         ]
     }).then((data)=>{

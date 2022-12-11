@@ -13,12 +13,38 @@ export const makeBenchList = templater(({id,name,type,style,img})=>`
 `)
 
 export const makeUserProfilePage = ({name,email,username,img})=>`
-<div>
-    <div class="user-profile-image"><img src="${img}"></div>
-    <div class="user-profile-body">
-        <div class="user-profile-name">${name}</div>
-        <div class="user-profile-style">@${username}</div>
-        <div class="user-profile-email">${email}</div>
+<div class="userProfile">
+    <div class="user-profile-title">User Profile</div>
+    <div class="user-profile-userInfo">
+        <img src="${img}" class="avatarImg" id="avatarImg" style="width: 30%">
+        <div class="user-profile-userName" id="user-profile-userName">${username}</div>
+        <div class="user-profile-userName">${email}</div>
+    </div>
+    <div class="user-profile-btnList">
+    <div class="user-profile-link">
+        <a href="#user-edit-page">
+            <div class="user-profile-edit user-profile-btn">
+                <div class="user-profile-icon">
+                    <img src="icon.png">
+                </div>
+                <div class="user-profile-btnText">
+                    Edit Profile
+                </div>
+            </div>
+        </a>
+        </div>
+        <div class="user-profile-link">
+        <a href="#user-settings-page">
+            <div class="user-profile-settings user-profile-btn">
+                <div class="user-profile-icon">
+                    <img src="icon.png">
+                </div>
+                <div class="user-profile-btnText">
+                    Settings
+                </div>
+            </div>
+        </a>
+        </div>
     </div>
 </div>
 `
@@ -46,7 +72,7 @@ export const makeBenchMapDescription = ({name,type,style,img}) => {
 
 
 export const makeEditUserForm = ({name,username,email}) => {
-    
+
     return `<div class="form-control">
         <label class="form-label" for="user-edit-username">Username</label>
         <input class="form-input" type="text" id="user-edit-username" data-role="none" placeholder="Type your Username" value="${username}">
@@ -80,6 +106,12 @@ const FormControlTextarea = ({namespace,name,displayname,placeholder,value}) => 
 
 export const makeEditBenchForm = ({bench,namespace}) => {
     return `
+    <div class="form-control">
+        <input type="hidden" id="${namespace}-photo-image" value="${bench.img??""}">
+        <label class="imagepicker replace thumbnail ${animal.img?"picked":""}" style="background-image:url('${bench.img}')">
+            <input type="file" id="${namespace}-photo-input" data-role="none" class="hidden">
+        </label>
+    </div>
     ${FormControlInput({
         namespace,
         name: "name",
