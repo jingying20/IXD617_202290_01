@@ -531,7 +531,7 @@ a{
     text-align: center;
 }
 .nav-link.active {
-    background-color:var(--color-main-light);
+    background-color:#e66887;
 }
 .bench-profile-top {
     position:relative;

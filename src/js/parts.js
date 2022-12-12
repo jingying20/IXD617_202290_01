@@ -108,7 +108,7 @@ export const makeEditBenchForm = ({bench,namespace}) => {
     return `
     <div class="form-control">
         <input type="hidden" id="${namespace}-photo-image" value="${bench.img??""}">
-        <label class="imagepicker replace thumbnail ${animal.img?"picked":""}" style="background-image:url('${bench.img}')">
+        <label class="imagepicker replace thumbnail ${bench.img?"picked":""}" style="background-image:url('${bench.img}')">
             <input type="file" id="${namespace}-photo-input" data-role="none" class="hidden">
         </label>
     </div>
